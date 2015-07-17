@@ -13,6 +13,7 @@
 		29C464C91B59BB1E00707518 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C464C81B59BB1E00707518 /* Images.xcassets */; };
 		29C464CC1B59BB1E00707518 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C464CA1B59BB1E00707518 /* LaunchScreen.xib */; };
 		29C464D81B59BB1E00707518 /* zhihuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C464D71B59BB1E00707518 /* zhihuTests.swift */; };
+		29C464E21B59C16400707518 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29C464E11B59C16400707518 /* bg.jpg */; };
 		EE992057CBE2D9E5CD84BA12 /* Pods_zhihu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24069CA0BA6A577ACB153F57 /* Pods_zhihu.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		29C464D11B59BB1E00707518 /* zhihuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zhihuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C464D61B59BB1E00707518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C464D71B59BB1E00707518 /* zhihuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zhihuTests.swift; sourceTree = "<group>"; };
+		29C464E11B59C16400707518 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		AEEAE14D8C4163A9F2EC8E87 /* Pods-zhihu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhihu.release.xcconfig"; path = "Pods/Target Support Files/Pods-zhihu/Pods-zhihu.release.xcconfig"; sourceTree = "<group>"; };
 		F8878A9800BF1DBE768B2422 /* Pods-zhihu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhihu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zhihu/Pods-zhihu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 		29C464BF1B59BB1E00707518 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29C464E11B59C16400707518 /* bg.jpg */,
 				29C464C01B59BB1E00707518 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -221,6 +224,7 @@
 			files = (
 				29C464C71B59BB1E00707518 /* Main.storyboard in Resources */,
 				29C464CC1B59BB1E00707518 /* LaunchScreen.xib in Resources */,
+				29C464E21B59C16400707518 /* bg.jpg in Resources */,
 				29C464C91B59BB1E00707518 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

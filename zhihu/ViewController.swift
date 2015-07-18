@@ -60,23 +60,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 stories = json["stories"]
                 top_stories = json["top_stories"]
                 
+                print("\(stories)")
                 if let imageUrl = json["top_stories"][0]["image"].string,
                     let imageData = NSData(contentsOfURL: NSURL(string: imageUrl)!) {
                         imageView.image = UIImage(data: imageData)
+                        imageView.setNeedsLayout()
+                        //imageView.superview?.bounds.height = imageView.image?.size.height
                 }
                 
         }
-        /*
-        if let data = NSString(contentsOfURL: NSURL(string: URL.latest)!, encoding: NSUTF8StringEncoding, error: nil){
-            if let json = JSON(data) {
-                if let imageURL = json["stories"][0]["images"][0] {
-                    if let imageData = NSData(contentsOfURL: imageURL) {
-                        imageView.image = UIImage(data: imageData)
-                    }
-                }
-            }
-        }*/
-        
+      
     }
 
     // MARK : datasource
@@ -88,14 +81,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? UITableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? SoriesTableViewCell {
             if let text = stories?[indexPath.row]["title"].string {
-                cell.textLabel?.text = text
+                cell.contentText = text
+                //cell.textLabel?.text = text
             }
 
             return cell
         }
         return UITableViewCell()
+    }
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
 
 }

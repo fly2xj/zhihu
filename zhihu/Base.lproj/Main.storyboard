@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RnL-iE-6Fo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" id="V0U-ZX-dc5">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="120"/>
+                                    <rect key="frame" x="0.0" y="64" width="600" height="250"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hS0-cI-70U">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                            <rect key="frame" x="0.0" y="-65" width="600" height="315"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,24 +33,46 @@
                                         <constraint firstAttribute="bottom" secondItem="hS0-cI-70U" secondAttribute="bottom" id="dFR-jy-spy"/>
                                         <constraint firstAttribute="trailing" secondItem="hS0-cI-70U" secondAttribute="trailing" id="tWM-yB-wCQ"/>
                                         <constraint firstItem="hS0-cI-70U" firstAttribute="leading" secondItem="V0U-ZX-dc5" secondAttribute="leading" id="yOg-QN-EE0"/>
-                                        <constraint firstItem="hS0-cI-70U" firstAttribute="top" secondItem="V0U-ZX-dc5" secondAttribute="top" id="zOX-tz-Uph"/>
+                                        <constraint firstItem="hS0-cI-70U" firstAttribute="top" secondItem="V0U-ZX-dc5" secondAttribute="top" constant="-65" id="zOX-tz-Uph"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="bcR-WL-s1T" style="IBUITableViewCellStyleDefault" id="LUa-hW-lmR">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="40" id="LUa-hW-lmR" customClass="SoriesTableViewCell" customModule="zhihu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUa-hW-lmR" id="wg4-Vs-eD5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bcR-WL-s1T">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f1V-Kl-8zK">
+                                                    <rect key="frame" x="58" y="0.0" width="542" height="39"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clz-7v-AOY">
+                                                    <rect key="frame" x="18" y="11" width="40" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="f1V-Kl-8zK" secondAttribute="bottom" constant="-8" id="1bZ-HN-jn3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Clz-7v-AOY" secondAttribute="bottom" constant="3" id="4Pn-Lb-plL"/>
+                                                <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" id="5rF-Kx-7d0"/>
+                                                <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" id="RGi-ct-eT9"/>
+                                                <constraint firstItem="f1V-Kl-8zK" firstAttribute="top" secondItem="wg4-Vs-eD5" secondAttribute="topMargin" constant="-8" id="Yd3-2e-QpX"/>
+                                                <constraint firstItem="Clz-7v-AOY" firstAttribute="top" secondItem="wg4-Vs-eD5" secondAttribute="topMargin" constant="3" id="ZkI-4L-MTF"/>
+                                                <constraint firstItem="Clz-7v-AOY" firstAttribute="leading" secondItem="wg4-Vs-eD5" secondAttribute="leadingMargin" constant="10" id="sHI-e8-E7M"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f1V-Kl-8zK" secondAttribute="trailing" constant="-8" id="vYx-Ne-vPD"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="5rF-Kx-7d0"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="content" destination="Clz-7v-AOY" id="DCz-GG-hxx"/>
+                                            <outlet property="thumb" destination="f1V-Kl-8zK" id="s2m-D6-QRi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

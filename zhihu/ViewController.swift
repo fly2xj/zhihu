@@ -20,7 +20,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     struct URL {
         static let latest = "http://news-at.zhihu.com/api/4/stories/latest?client=0"
     }
-    
+    struct identifiers {
+        static let cell = "cell"
+        static let detailSegue = "show content"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,7 +84,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? SoriesTableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(identifiers.cell, forIndexPath: indexPath) as? SoriesTableViewCell {
             if let text = stories?[indexPath.row]["title"].string {
                 cell.contentText = text
                 //cell.textLabel?.text = text
@@ -93,6 +96,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == identifiers.detailSegue {
+            
+        }
     }
 
 }

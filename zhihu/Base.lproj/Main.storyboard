@@ -44,10 +44,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f1V-Kl-8zK">
-                                                    <rect key="frame" x="58" y="0.0" width="542" height="39"/>
+                                                    <rect key="frame" x="512" y="0.0" width="88" height="39"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clz-7v-AOY">
-                                                    <rect key="frame" x="18" y="11" width="40" height="17"/>
+                                                    <rect key="frame" x="18" y="11" width="494" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,15 +57,18 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="f1V-Kl-8zK" secondAttribute="bottom" constant="-8" id="1bZ-HN-jn3"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Clz-7v-AOY" secondAttribute="bottom" constant="3" id="4Pn-Lb-plL"/>
                                                 <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" id="5rF-Kx-7d0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Clz-7v-AOY" secondAttribute="trailing" constant="80" id="R8H-Xh-9dZ"/>
                                                 <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" id="RGi-ct-eT9"/>
                                                 <constraint firstItem="f1V-Kl-8zK" firstAttribute="top" secondItem="wg4-Vs-eD5" secondAttribute="topMargin" constant="-8" id="Yd3-2e-QpX"/>
                                                 <constraint firstItem="Clz-7v-AOY" firstAttribute="top" secondItem="wg4-Vs-eD5" secondAttribute="topMargin" constant="3" id="ZkI-4L-MTF"/>
+                                                <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" id="o46-Qo-pQL"/>
                                                 <constraint firstItem="Clz-7v-AOY" firstAttribute="leading" secondItem="wg4-Vs-eD5" secondAttribute="leadingMargin" constant="10" id="sHI-e8-E7M"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="f1V-Kl-8zK" secondAttribute="trailing" constant="-8" id="vYx-Ne-vPD"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="5rF-Kx-7d0"/>
+                                                    <exclude reference="RGi-ct-eT9"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -89,11 +92,30 @@
                     <connections>
                         <outlet property="imageView" destination="hS0-cI-70U" id="SOz-mK-Hvd"/>
                         <outlet property="tableView" destination="pLd-X2-X6S" id="UZZ-EI-d3l"/>
+                        <segue destination="Zum-rh-7vm" kind="showDetail" identifier="show content" id="mj1-tg-GKa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763" y="443"/>
+            <point key="canvasLocation" x="131" y="237"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="fiu-3J-6px">
+            <objects>
+                <viewController id="Zum-rh-7vm" customClass="DetailViewController" customModule="zhihu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Uy-wA-IgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="ydr-SB-P8a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gQx-jt-AEB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w48-D9-EGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B0t-s2-dSL">

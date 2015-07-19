@@ -37,7 +37,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="40" id="LUa-hW-lmR" customClass="SoriesTableViewCell" customModule="zhihu" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="259" verticalCompressionResistancePriority="759" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="40" id="LUa-hW-lmR" customClass="SoriesTableViewCell" customModule="zhihu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUa-hW-lmR" id="wg4-Vs-eD5">

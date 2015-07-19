@@ -19,7 +19,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     struct URL {
         static let latest = "http://news-at.zhihu.com/api/4/stories/latest?client=0"
+        static let detail = "https://news-at.zhihu.com/api/3/news/"
     }
+    
     struct identifiers {
         static let cell = "cell"
         static let detailSegue = "show content"
@@ -85,8 +87,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier(identifiers.cell, forIndexPath: indexPath) as? SoriesTableViewCell {
-            if let text = stories?[indexPath.row]["title"].string {
+            if let text = stories?[indexPath.row]["title"].string,
+                let id = stories?[indexPath.row]["id"].int{
                 cell.contentText = text
+                cell.id = id
                 //cell.textLabel?.text = text
             }
 
@@ -100,7 +104,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == identifiers.detailSegue {
-            
+            if let navigation = segue.destinationViewController as? UINavigationController,
+                let detailView = navigation.visibleViewController as? DetailViewController,
+                let cell = sender as? SoriesTableViewCell {
+                    detailView.url = NSURL(string: "\(URL.detail)\(cell.id)")
+            }
         }
     }
 

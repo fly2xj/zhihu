@@ -10,6 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var webView: UIWebView!
+    
+    var url: NSURL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,12 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        if url != nil {
+            let request = NSURLRequest(URL: url!)
+            webView?.loadRequest(request)
+        }
+    }
 
     /*
     // MARK: - Navigation

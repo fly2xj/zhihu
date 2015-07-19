@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 class DetailViewController: UIViewController {
 
@@ -17,6 +19,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.hidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -27,8 +30,16 @@ class DetailViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         if url != nil {
-            let request = NSURLRequest(URL: url!)
-            webView?.loadRequest(request)
+            if let data = NSData(contentsOfURL: url!) {
+                let json = JSON(data: data)
+                if let body = json["body"].string,
+                    let css = json["css"][0].string {
+                        let html = "<link href='\(css)' rel='stylesheet' type='text/css' />\(body)"
+                        webView?.loadHTMLString(html, baseURL: nil)
+                }
+            }
+//            let request = NSURLRequest(URL: url!)
+//            webView?.loadRequest(request)
         }
     }
 

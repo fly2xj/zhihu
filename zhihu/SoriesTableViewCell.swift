@@ -16,7 +16,6 @@ class SoriesTableViewCell: UITableViewCell {
     var contentText: String {
         set{
             content?.text = newValue
-            thumb?.image = UIImage(named: "bg")
         }
         get{
             if let text = content?.text {
@@ -28,6 +27,16 @@ class SoriesTableViewCell: UITableViewCell {
     }
     
     var id: Int = 0
+    var thumbUrl: NSURL? {
+        set {
+            dispatch_async(dispatch_get_main_queue()) {
+                if let data = NSData(contentsOfURL: newValue!) {
+                    self.thumb?.image = UIImage(data: data)
+                }
+            }
+        }
+        get { return NSURL() }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

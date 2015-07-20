@@ -88,10 +88,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier(identifiers.cell, forIndexPath: indexPath) as? SoriesTableViewCell {
             if let text = stories?[indexPath.row]["title"].string,
-                let id = stories?[indexPath.row]["id"].int{
-                cell.contentText = text
-                cell.id = id
-                //cell.textLabel?.text = text
+                let id = stories?[indexPath.row]["id"].int,
+                let thumb = stories?[indexPath.row]["images"][0].string {
+                    cell.contentText = text
+                    cell.id = id
+                    cell.thumbUrl = NSURL(string: thumb)
             }
 
             return cell
@@ -99,7 +100,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return UITableViewCell()
     }
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 106
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 106
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

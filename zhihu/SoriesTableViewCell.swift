@@ -29,9 +29,12 @@ class SoriesTableViewCell: UITableViewCell {
     var id: Int = 0
     var thumbUrl: NSURL? {
         set {
-            dispatch_async(dispatch_get_main_queue()) {
+            let queue = dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0)
+            dispatch_async(queue){
                 if let data = NSData(contentsOfURL: newValue!) {
-                    self.thumb?.image = UIImage(data: data)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.thumb?.image = UIImage(data: data)
+                    }
                 }
             }
         }
@@ -47,6 +50,9 @@ class SoriesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        if selected {
+            content?.textColor = UIColor.grayColor()
+        }
         
     }
 

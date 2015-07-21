@@ -126,18 +126,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpU-Fr-fcG">
+                                <rect key="frame" x="-4" y="0.0" width="608" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="69y-ND-lix"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pLd-X2-X6S" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="1bN-bh-y7L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fpU-Fr-fcG" secondAttribute="trailing" constant="-20" id="2p8-C6-lEg"/>
                             <constraint firstAttribute="trailing" secondItem="pLd-X2-X6S" secondAttribute="trailing" id="Fmi-o7-MRz"/>
                             <constraint firstItem="pLd-X2-X6S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iqm-N6-7a2"/>
                             <constraint firstItem="pLd-X2-X6S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VpX-dV-oFW"/>
+                            <constraint firstItem="fpU-Fr-fcG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="hDH-Dw-fee"/>
+                            <constraint firstItem="fpU-Fr-fcG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="nug-1q-nE8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fjm-DV-we4"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="imageView" destination="hS0-cI-70U" id="SOz-mK-Hvd"/>
+                        <outlet property="overlay" destination="fpU-Fr-fcG" id="O2E-Zh-1Px"/>
                         <outlet property="tableView" destination="pLd-X2-X6S" id="UZZ-EI-d3l"/>
                     </connections>
                 </viewController>
@@ -171,6 +183,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A6Z-H6-eFc"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="webView" destination="OfY-eV-aJ9" id="jxL-9e-XyI"/>
                     </connections>
@@ -184,6 +197,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RnL-iE-6Fo" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="33O-Cz-v71">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -195,7 +209,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCR-5e-fdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="1053"/>
+            <point key="canvasLocation" x="-62" y="693"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u8m-P9-3ts">

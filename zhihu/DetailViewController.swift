@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     
@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        webView.scrollView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -30,6 +31,8 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         let imageview = UIImageView(frame: CGRectMake(0, -100, 600, 300))
         imageview.image = thumb
         imageview.contentMode = UIViewContentMode.ScaleAspectFill
@@ -54,6 +57,7 @@ class DetailViewController: UIViewController {
         }
     }
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if url != nil {
             if let data = NSData(contentsOfURL: url!) {
                 let json = JSON(data: data)
@@ -67,15 +71,17 @@ class DetailViewController: UIViewController {
 //            webView?.loadRequest(request)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        webView.scrollView.delegate = nil
     }
-    */
 
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        if offset >= 180 {
+            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        } else  {
+            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        }
+    }
 }

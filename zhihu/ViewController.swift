@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var overlay: UIView!
     
     var stories: JSON?
     var top_stories: JSON?
@@ -36,6 +37,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillAppear(animated: Bool) {
         tableView?.delegate = self
         tableView?.dataSource = self
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     }
     override func viewWillDisappear(animated: Bool) {
         tableView?.dataSource = nil
@@ -102,6 +105,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 106
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        if offset >= 200 - 76 {
+            overlay?.alpha = 1
+        } else {
+            overlay?.alpha = offset / 124.0
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -99,9 +99,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         return UITableViewCell()
     }
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 106
-    }
+
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 106
     }
@@ -112,6 +110,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let detailView = navigation.visibleViewController as? DetailViewController,
                 let cell = sender as? SoriesTableViewCell {
                     detailView.url = NSURL(string: "\(URL.detail)\(cell.id)")
+                    detailView.caption = cell.contentText
+                    if cell.thumb.image != nil {
+                        detailView.thumb = cell.thumb.image!
+                    }
             }
         }
     }

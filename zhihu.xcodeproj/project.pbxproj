@@ -16,6 +16,7 @@
 		29C464E21B59C16400707518 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29C464E11B59C16400707518 /* bg.jpg */; };
 		29C464E41B59CE6300707518 /* SoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C464E31B59CE6300707518 /* SoriesTableViewCell.swift */; };
 		29C464E61B59D97600707518 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C464E51B59D97600707518 /* DetailViewController.swift */; };
+		29CFB0BE1B5E126F004345E9 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CFB0BD1B5E126F004345E9 /* shadow.png */; };
 		EE992057CBE2D9E5CD84BA12 /* Pods_zhihu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24069CA0BA6A577ACB153F57 /* Pods_zhihu.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		29C464E11B59C16400707518 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		29C464E31B59CE6300707518 /* SoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoriesTableViewCell.swift; sourceTree = "<group>"; };
 		29C464E51B59D97600707518 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		29CFB0BD1B5E126F004345E9 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		AEEAE14D8C4163A9F2EC8E87 /* Pods-zhihu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhihu.release.xcconfig"; path = "Pods/Target Support Files/Pods-zhihu/Pods-zhihu.release.xcconfig"; sourceTree = "<group>"; };
 		F8878A9800BF1DBE768B2422 /* Pods-zhihu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhihu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zhihu/Pods-zhihu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 		29C464BF1B59BB1E00707518 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29CFB0BD1B5E126F004345E9 /* shadow.png */,
 				29C464E11B59C16400707518 /* bg.jpg */,
 				29C464C01B59BB1E00707518 /* Info.plist */,
 			);
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CFB0BE1B5E126F004345E9 /* shadow.png in Resources */,
 				29C464C71B59BB1E00707518 /* Main.storyboard in Resources */,
 				29C464CC1B59BB1E00707518 /* LaunchScreen.xib in Resources */,
 				29C464E21B59C16400707518 /* bg.jpg in Resources */,

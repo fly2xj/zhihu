@@ -24,7 +24,7 @@
                                     <rect key="frame" x="0.0" y="64" width="600" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hS0-cI-70U">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hS0-cI-70U">
                                             <rect key="frame" x="0.0" y="-200" width="600" height="400"/>
                                         </imageView>
                                     </subviews>
@@ -44,13 +44,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clz-7v-AOY">
-                                                    <rect key="frame" x="18" y="11" width="454" height="17"/>
+                                                    <rect key="frame" x="18" y="11" width="434" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="f1V-Kl-8zK">
-                                                    <rect key="frame" x="482" y="8" width="100" height="23"/>
+                                                    <rect key="frame" x="472" y="8" width="100" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="Fm8-6N-vgg"/>
                                                         <constraint firstAttribute="width" constant="100" id="Tbv-Xr-MRi"/>
@@ -78,7 +78,7 @@
                                                 <constraint firstItem="f1V-Kl-8zK" firstAttribute="bottom" secondItem="wg4-Vs-eD5" secondAttribute="bottomMargin" constant="20" id="R4c-nx-GbX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Clz-7v-AOY" secondAttribute="trailing" constant="80" id="R8H-Xh-9dZ"/>
                                                 <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" id="RGi-ct-eT9"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="f1V-Kl-8zK" secondAttribute="trailing" constant="10" id="T90-5b-nJX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f1V-Kl-8zK" secondAttribute="trailing" constant="20" id="T90-5b-nJX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="f1V-Kl-8zK" secondAttribute="bottom" id="Vf4-Qn-zd8"/>
                                                 <constraint firstItem="f1V-Kl-8zK" firstAttribute="top" secondItem="wg4-Vs-eD5" secondAttribute="topMargin" constant="-8" id="Yd3-2e-QpX"/>
                                                 <constraint firstItem="Clz-7v-AOY" firstAttribute="top" secondItem="wg4-Vs-eD5" secondAttribute="topMargin" constant="3" id="ZkI-4L-MTF"/>
@@ -89,7 +89,7 @@
                                                 <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" id="o46-Qo-pQL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="f1V-Kl-8zK" secondAttribute="bottom" constant="20" id="oje-kP-JJx"/>
                                                 <constraint firstItem="Clz-7v-AOY" firstAttribute="leading" secondItem="wg4-Vs-eD5" secondAttribute="leadingMargin" constant="10" id="sHI-e8-E7M"/>
-                                                <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" constant="10" id="szB-ie-gUW"/>
+                                                <constraint firstItem="f1V-Kl-8zK" firstAttribute="leading" secondItem="Clz-7v-AOY" secondAttribute="trailing" constant="20" id="szB-ie-gUW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="f1V-Kl-8zK" secondAttribute="trailing" constant="-8" id="vYx-Ne-vPD"/>
                                             </constraints>
                                             <variation key="default">
